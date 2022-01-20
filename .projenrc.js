@@ -19,6 +19,5 @@ const infrastructure = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: "2.7.0",
   outdir: "aws",
   eslint: false,
-  cdkout: "../cdk.out",
 });
 infrastructure.synth();

@@ -1,6 +1,6 @@
 {
   "app": "npx ts-node -P tsconfig.json --prefer-ts-exts src/main.ts",
-  "output": "../cdk.out",
+  "output": "cdk.out",
   "build": "npx projen bundle",
   "watch": {
     "include": [

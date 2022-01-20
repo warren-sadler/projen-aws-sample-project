@@ -17,5 +17,5 @@ dist
 /.projenrc.js
 tsconfig.tsbuildinfo
 !/assets/
-../cdk.out/
+cdk.out/
 .cdk.staging/
