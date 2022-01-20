@@ -24,7 +24,7 @@ export class ProjenAwsSamplePipline extends cdk.Stack {
             ).secretValue,
           }
         ),
-        commands: ["install:infra", "build:infra", "synth:infra"],
+        commands: ["cd aws", "npm install", "npm run build", "npx cdk synth"],
       }),
     });
   }
