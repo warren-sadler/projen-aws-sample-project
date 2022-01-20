@@ -228,7 +228,7 @@
                   "ProjectName": {
                     "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
                   },
-                  "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"39e3e4be7121337ad3011afd5f81ab3f5a3cd19d09bad37f4abc0d0c5247010c\"}]"
+                  "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"470ac0849847bbd6931307670f973dbe39e4a9a4f07188938b3d05d4b957c657\"}]"
                 },
                 "InputArtifacts": [
                   {
@@ -496,7 +496,7 @@
           ]
         },
         "Source": {
-          "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"npm install\",\n        \"npm run build\",\n        \"npx cdk synth\"\n      ]\n    }\n  },\n  \"artifacts\": {\n    \"base-directory\": \"cdk.out\",\n    \"files\": \"**/*\"\n  }\n}",
+          "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"cd aws\",\n        \"npm install\",\n        \"npm run build\",\n        \"npx cdk synth\"\n      ]\n    }\n  },\n  \"artifacts\": {\n    \"base-directory\": \"aws/cdk.out\",\n    \"files\": \"**/*\"\n  }\n}",
           "Type": "CODEPIPELINE"
         },
         "Cache": {
