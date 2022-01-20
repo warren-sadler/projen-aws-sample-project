@@ -24,6 +24,14 @@
         }
       ]
     },
+    "build:infra": {
+      "name": "build:infra",
+      "steps": [
+        {
+          "exec": "cd aws && npm run build"
+        }
+      ]
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -83,6 +91,14 @@
         }
       ]
     },
+    "install:infra": {
+      "name": "install:infra",
+      "steps": [
+        {
+          "exec": "cd aws && npm install"
+        }
+      ]
+    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package"
@@ -98,6 +114,14 @@
     "pre-compile": {
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
+    },
+    "synth:infra": {
+      "name": "synth:infra",
+      "steps": [
+        {
+          "exec": "cd aws && npx cdk synth"
+        }
+      ]
     },
     "test": {
       "name": "test",
@@ -155,7 +179,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit json-schema npm-check-updates ts-jest typescript"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit json-schema npm-check-updates prettier ts-jest typescript"
         },
         {
           "exec": "npx projen"

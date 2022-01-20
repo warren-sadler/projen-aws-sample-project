@@ -1,4 +1,5 @@
 import * as cdk from "aws-cdk-lib";
+import * as secretsmanager from "aws-cdk-lib/aws-secretsmanager";
 import { Construct } from "constructs";
 import {
   ShellStep,
@@ -14,9 +15,16 @@ export class ProjenAwsSamplePipline extends cdk.Stack {
       synth: new ShellStep("Synth", {
         input: CodePipelineSource.gitHub(
           "warren-sadler/projen-aws-sample-project",
-          "main"
+          "main",
+          {
+            authentication: secretsmanager.Secret.fromSecretNameV2(
+              this,
+              "GitHubToken",
+              "warren-github-token"
+            ).secretValue,
+          }
         ),
-        commands: ["npm install", "npm run build", "npx cdk synth"],
+        commands: ["install:infra", "build:infra", "synth:infra"],
       }),
     });
   }
