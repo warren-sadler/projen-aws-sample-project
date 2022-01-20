@@ -25,6 +25,7 @@ export class ProjenAwsSamplePipline extends cdk.Stack {
           }
         ),
         commands: ["cd aws", "npm install", "npm run build", "npx cdk synth"],
+        primaryOutputDirectory: "aws/cdk.out",
       }),
     });
   }
